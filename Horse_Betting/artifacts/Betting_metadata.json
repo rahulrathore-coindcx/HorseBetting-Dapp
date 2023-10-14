@@ -1,0 +1,161 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_raceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "enum Betting.BetType",
+						"name": "_betType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "enum Betting.Arealocation",
+						"name": "_location",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_horseIndex",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "betResult",
+				"outputs": [
+					{
+						"internalType": "enum Betting.BetResult",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "location",
+				"outputs": [
+					{
+						"internalType": "enum Betting.Arealocation",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "raceId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token",
+				"outputs": [
+					{
+						"internalType": "contract ERC20Token",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userBets",
+				"outputs": [
+					{
+						"internalType": "enum Betting.BetType",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Betting.sol": "Betting"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Betting.sol": {
+			"keccak256": "0x0c4ae91d08b2b18d656b446540b908e1c9a6892ae6eeed1d913dc1378b1ade89",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ddff71c854f0b85e30aba25e781b977240ee269b6ae29f81e2ad23804f890005",
+				"dweb:/ipfs/QmaQmyLS1kxjd5Kn3Bx8bC1hJ5cHu3LgdDLiRUg6Ajk8aQ"
+			]
+		},
+		"ERC20.sol": {
+			"keccak256": "0x07be7b1eddef07125b6baeaf3b6457bd79ad89f66c1a4577065c2a53462fb1c3",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://19ac8f1962b0e1abcad2eb09a5ea534a8b4f25ac730dad0ba943eae5f872d68e",
+				"dweb:/ipfs/QmVWxJPKiDzj7CMhYTboTJVhYynWg8MSJVwnadGmyFjD1x"
+			]
+		}
+	},
+	"version": 1
+}
