@@ -1,0 +1,346 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "DECIMALS",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "HUNDRED",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "bets",
+				"outputs": [
+					{
+						"internalType": "contract Betting",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "betsInSystem",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_raceIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_horseIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum Betting.BetType",
+						"name": "_betType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "enum Betting.Arealocation",
+						"name": "_location",
+						"type": "uint8"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "createBet",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_raceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_horseNumbers",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_endTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum Betting.Arealocation",
+						"name": "_location",
+						"type": "uint8"
+					}
+				],
+				"name": "createRace",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "a",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "b",
+						"type": "uint256"
+					}
+				],
+				"name": "divide",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_raceIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "evaluateRace",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "a",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "b",
+						"type": "uint256"
+					}
+				],
+				"name": "multiply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "base",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exponent",
+						"type": "uint256"
+					}
+				],
+				"name": "power",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "raceExists",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "raceToBet",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "races",
+				"outputs": [
+					{
+						"internalType": "contract RaceCourse",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Horse_Betting/BettingEngine.sol": "BettingEngine"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Horse_Betting/Betting.sol": {
+			"keccak256": "0x24acd69d0521b29b9f5299075902fab6353b3f24d521bdaea668bb4cfbd07943",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d78da228ec711da2b7c861b4c03ad613aed38ee9e405c9817aba1fa9a40451f6",
+				"dweb:/ipfs/QmUiYJCxnBdvPpET53y2adPkex8G3HDjiJQH9FAkxSSmxR"
+			]
+		},
+		"Horse_Betting/BettingEngine.sol": {
+			"keccak256": "0x9969683a88e48f951b51024735faad92b39e2e5adaa700b761511cb0ad8629aa",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://df242b70ab89ddc77c53ace06d09d71b865bc976152e5d4f9ac866017befbc8a",
+				"dweb:/ipfs/QmZPNcS2zsviBPGcG1zWLPkU2L4PXoaGJBEZQR4XZoLSaW"
+			]
+		},
+		"Horse_Betting/ERC20.sol": {
+			"keccak256": "0x07be7b1eddef07125b6baeaf3b6457bd79ad89f66c1a4577065c2a53462fb1c3",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://19ac8f1962b0e1abcad2eb09a5ea534a8b4f25ac730dad0ba943eae5f872d68e",
+				"dweb:/ipfs/QmVWxJPKiDzj7CMhYTboTJVhYynWg8MSJVwnadGmyFjD1x"
+			]
+		},
+		"Horse_Betting/RaceCourse.sol": {
+			"keccak256": "0x89a3e3f6869e899003f9efe697b59b45cc934d510b250d55a1cabffff0aa4cde",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b0d9545bfc0e4ed23267c8aaa9f8ec72d73269e0861287e16578595c257280da",
+				"dweb:/ipfs/QmdhTF7uCDxykXKGs6JYpE93Wek16jJYwA49gtB4LTQfnq"
+			]
+		}
+	},
+	"version": 1
+}

@@ -54,7 +54,7 @@ contract BettingEngine {
             for(uint256 j=0;j<winners.length;j++) {
                 if (winners[j] == bettingContract.getHorseIndex()) {
                     bettingContract.setBetResult(Betting.BetResult.Win);
-                    //race.winBetters.push(betsInRace[i]);
+                    race.setWinBetter(betsInRace[i]);
                     break;
                 }
             }
@@ -66,7 +66,7 @@ contract BettingEngine {
         distribute(_raceIndex,lossingAmount);
     }
 
-    function distribute(uint256 _raceIndex, uint256 _amount) internal returns (bool) {
+    function distribute(uint256 _raceIndex, uint256 _amount) internal {
        uint256[] memory winners = races[_raceIndex].getWinners();
        uint256[] memory betters = races[_raceIndex].getWinBetters();
         for (uint256 i=1;i <= winners.length;i++) {
@@ -75,12 +75,12 @@ contract BettingEngine {
                 Betting bettingContract = bets[betters[j]];
                 uint256 contribution = divide(bettingContract.getAmount(), _amount);
                 uint256 bettingReward = multiply(contribution, distributionAmount);
-                require(bettingContract.token.transferFrom(address(this), bettingContract.getTokenAddress(),  bettingContract.getAmount() + bettingReward), "Token transfer failed");
+                require(bettingContract.getToken().transferFrom(address(this), bettingContract.getTokenAddress(),  bettingContract.getAmount() + bettingReward), "Token transfer failed");
             }
         }
     }
 
-    function getRandom (uint256 _size) internal returns (uint256[] memory) {
+    function getRandom (uint256 _size) internal view returns (uint256[] memory) {
 
         uint256[] memory arr = new uint256[](_size);
         uint256 seed = uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty)));
@@ -95,7 +95,7 @@ contract BettingEngine {
         return arr;
     }
 
-    function NthWinnerPercent(uint256 n) internal returns (uint256) {
+    function NthWinnerPercent(uint256 n) internal pure returns (uint256) {
         // a = 50
         // r = 1/2
         // logic is based on GP

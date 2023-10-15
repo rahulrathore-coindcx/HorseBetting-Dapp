@@ -31,6 +31,10 @@ contract Betting {
     function getAmount() public view returns (uint256) {
         return amount;
     }
+
+    function getToken() public view returns (ERC20Token) {
+        return token;
+    }
     
     function getTokenAddress() public view returns (address) {
         return tokenAddress;

@@ -40,6 +40,10 @@ contract RaceCourse {
      return winners;
     }
 
+    function setWinBetter(uint256 _winBetter) public {
+       winBetters.push(_winBetter);
+    }
+
     function getWinBetters() public view returns (uint256[] memory) {
      return winBetters;
     }
