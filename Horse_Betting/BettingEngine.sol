@@ -6,14 +6,15 @@ import "./Betting.sol";
 import "./ERC20.sol";
 
 contract BettingEngine {
-    RaceCourse[] races;  // store all raceCourse data
-    Betting[] bets; // store all betting data
-    uint256 betsInSystem = 0;
+    RaceCourse[] public races;  // store all raceCourse data
+    Betting[] public bets; // store all betting data
+    uint256 public betsInSystem = 0;
     
     uint256 public constant DECIMALS = 2;
     uint256 public constant HUNDRED = 100;
+    mapping(uint256 => uint256) public raceExists;
 
-    mapping (uint256 => uint256[]) raceToBet; // mapping for a raceId to all corresponding bets
+    mapping (uint256 => uint256[]) public raceToBet; // mapping for a raceId to all corresponding bets
 
     function createBet(uint _raceIndex, uint _horseIndex, uint _amount, Betting.BetType _betType, Betting.Arealocation _location, address _tokenAddress) public payable{
         require(msg.value >= _amount,
@@ -33,6 +34,7 @@ contract BettingEngine {
 
     function createRace(uint256 _raceId, uint256 _horseNumbers, uint256 _startTime, uint256 _endTime, Betting.Arealocation _location) public {
         require(_startTime > block.timestamp, "Race must take place in the future");
+        require(raceExists[_raceId] != 0, "Race already exists");
         RaceCourse raceCourse  = new RaceCourse(_raceId, _location, _startTime, _endTime, _horseNumbers);
         races.push(raceCourse);
     }
@@ -41,38 +43,39 @@ contract BettingEngine {
         //require(races[_raceIndex].endTime < block.timestamp, "Race not yet run");
         require(_raceIndex < races.length, "Race does not exist");
         RaceCourse race = races[_raceIndex];
-        uint256[] memory winners = getRandom(race.horses);
-        race.winners = winners;
+        uint256[] memory winners = getRandom(race.getHorses());
+        race.setWinners(winners);
+
         uint256[] memory betsInRace = raceToBet[_raceIndex];
         uint256 lossingAmount = 0;
       
         for (uint256 i=0;i<betsInRace.length;i++) {
             Betting bettingContract = bets[betsInRace[i]];
             for(uint256 j=0;j<winners.length;j++) {
-                if (winners[j] == bettingContract.horseIndex) {
-                    bettingContract.betResult = Betting.BetResult.Win;
-                    race.winBetters[j].push(betsInRace[i]);
+                if (winners[j] == bettingContract.getHorseIndex()) {
+                    bettingContract.setBetResult(Betting.BetResult.Win);
+                    //race.winBetters.push(betsInRace[i]);
                     break;
                 }
             }
-            if (bettingContract.betResult == Betting.BetResult.NA) {
-                bettingContract.betResult = Betting.BetResult.Loss;
-                lossingAmount+= bettingContract.amount;
+            if (bettingContract.getBetResult() == Betting.BetResult.NA) {
+                bettingContract.setBetResult(Betting.BetResult.Loss);
+                lossingAmount += bettingContract.getAmount();
             }
         }
         distribute(_raceIndex,lossingAmount);
     }
 
     function distribute(uint256 _raceIndex, uint256 _amount) internal returns (bool) {
-       uint256[] memory winners = races[_raceIndex].winners;
-       uint256[] memory betters = races[_raceIndex].winBetter;
-        for (uint256 i=1;i<=winners.length;i++) {
+       uint256[] memory winners = races[_raceIndex].getWinners();
+       uint256[] memory betters = races[_raceIndex].getWinBetters();
+        for (uint256 i=1;i <= winners.length;i++) {
             uint256 distributionAmount = multiply(NthWinnerPercent(i), _amount);
-            for(uint256 j=0;j<betters.length;j++) {
+            for(uint256 j=0;j < betters.length;j++) {
                 Betting bettingContract = bets[betters[j]];
-                uint256 contribution = divide(bettingContract.amount, _amount);
+                uint256 contribution = divide(bettingContract.getAmount(), _amount);
                 uint256 bettingReward = multiply(contribution, distributionAmount);
-                require(bettingContract.token.transferFrom(address(this), bettingContract.tokenAddress,  bettingContract.amount + bettingReward), "Token transfer failed");
+                require(bettingContract.token.transferFrom(address(this), bettingContract.getTokenAddress(),  bettingContract.getAmount() + bettingReward), "Token transfer failed");
             }
         }
     }

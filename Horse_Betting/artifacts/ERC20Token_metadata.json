@@ -67,7 +67,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"ERC20.sol": "ERC20Token"
+			"Horse_Betting/ERC20.sol": "ERC20Token"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -81,7 +81,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"ERC20.sol": {
+		"Horse_Betting/ERC20.sol": {
 			"keccak256": "0x07be7b1eddef07125b6baeaf3b6457bd79ad89f66c1a4577065c2a53462fb1c3",
 			"license": "GPL-3.0",
 			"urls": [

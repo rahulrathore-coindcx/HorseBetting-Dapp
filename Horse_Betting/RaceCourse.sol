@@ -28,4 +28,20 @@ contract RaceCourse {
         horses = _horse;
     }
 
+    function getHorses() public view returns (uint256) {
+        return horses;
+    }
+
+    function setWinners(uint256[] memory _winners) public {
+    winners = _winners;
+    }
+
+    function getWinners() public view returns (uint256[] memory) {
+     return winners;
+    }
+
+    function getWinBetters() public view returns (uint256[] memory) {
+     return winBetters;
+    }
+    
 }

@@ -51,6 +51,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "getHorses",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "horses",
 				"outputs": [
 					{
@@ -185,7 +198,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"RaceCourse.sol": "RaceCourse"
+			"Horse_Betting/RaceCourse.sol": "RaceCourse"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -199,7 +212,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"Betting.sol": {
+		"Horse_Betting/Betting.sol": {
 			"keccak256": "0xbf7213ccb89d4dbd13ed8ef5765008e5642bc5115730b066272728f44be36af4",
 			"license": "GPL-3.0",
 			"urls": [
@@ -207,7 +220,7 @@
 				"dweb:/ipfs/QmfDFmfKiqj6eawv525du8vBzJnGt3iX725nqSQ8E9rXaX"
 			]
 		},
-		"ERC20.sol": {
+		"Horse_Betting/ERC20.sol": {
 			"keccak256": "0x07be7b1eddef07125b6baeaf3b6457bd79ad89f66c1a4577065c2a53462fb1c3",
 			"license": "GPL-3.0",
 			"urls": [
@@ -215,12 +228,12 @@
 				"dweb:/ipfs/QmVWxJPKiDzj7CMhYTboTJVhYynWg8MSJVwnadGmyFjD1x"
 			]
 		},
-		"RaceCourse.sol": {
-			"keccak256": "0xe784df1cb0c7c502f783a7743479d1d1ef45c52820d832a2b6f0f62f6593d27f",
+		"Horse_Betting/RaceCourse.sol": {
+			"keccak256": "0x83ec1a96068bb4ffe4b5b0132e3d5df5c97c642f62ed6e0d0cbc01b7b10aebe6",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://2901523982bea348b2a883394530847db895be9b19bf10bee54cb4e742c11e9c",
-				"dweb:/ipfs/QmScqrffndwBdo5DnJCyeFjVzCYxDET5b5VBZaqkWHFE4i"
+				"bzz-raw://5d89310c40df54236d686f3ddfc946fec7ff05fac3ecc2cbd9ead4e8343c9f15",
+				"dweb:/ipfs/QmVFfPQUnyAvDmYCxLEKZfZst9cZcZBvgygNFv7jcE4GA1"
 			]
 		}
 	},

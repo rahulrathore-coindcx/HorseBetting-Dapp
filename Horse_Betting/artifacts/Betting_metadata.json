@@ -43,12 +43,90 @@
 			},
 			{
 				"inputs": [],
+				"name": "amount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "betResult",
 				"outputs": [
 					{
 						"internalType": "enum Betting.BetResult",
 						"name": "",
 						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBetResult",
+				"outputs": [
+					{
+						"internalType": "enum Betting.BetResult",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getHorseIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTokenAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "horseIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -78,6 +156,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum Betting.BetResult",
+						"name": "_betResult",
+						"type": "uint8"
+					}
+				],
+				"name": "setBetResult",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -126,7 +217,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Betting.sol": "Betting"
+			"Horse_Betting/Betting.sol": "Betting"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -140,15 +231,15 @@
 		"remappings": []
 	},
 	"sources": {
-		"Betting.sol": {
-			"keccak256": "0x0c4ae91d08b2b18d656b446540b908e1c9a6892ae6eeed1d913dc1378b1ade89",
+		"Horse_Betting/Betting.sol": {
+			"keccak256": "0xbddcaaa33a2039c3fe62bb32c3e97d4071c94db4609c1ab23d829be636671bcf",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://ddff71c854f0b85e30aba25e781b977240ee269b6ae29f81e2ad23804f890005",
-				"dweb:/ipfs/QmaQmyLS1kxjd5Kn3Bx8bC1hJ5cHu3LgdDLiRUg6Ajk8aQ"
+				"bzz-raw://c9f6217871e8f6b62396f201ebacbb56e357f8570360d9a214f87b0a96d67f3a",
+				"dweb:/ipfs/QmcWnUJaydCRrHzgoK44mxvARxaFkNujYC7yoLoNG1mAoz"
 			]
 		},
-		"ERC20.sol": {
+		"Horse_Betting/ERC20.sol": {
 			"keccak256": "0x07be7b1eddef07125b6baeaf3b6457bd79ad89f66c1a4577065c2a53462fb1c3",
 			"license": "GPL-3.0",
 			"urls": [

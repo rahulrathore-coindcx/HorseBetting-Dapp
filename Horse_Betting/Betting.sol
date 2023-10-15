@@ -27,4 +27,24 @@ contract Betting {
         tokenAddress = _tokenAddress;
         token = ERC20Token(_tokenAddress);
     }
+
+    function getAmount() public view returns (uint256) {
+        return amount;
+    }
+    
+    function getTokenAddress() public view returns (address) {
+        return tokenAddress;
+    }
+
+    function getHorseIndex() public view returns (uint256) {
+        return horseIndex;
+    }
+
+     function setBetResult(BetResult _betResult) public {
+         betResult = _betResult;
+    } 
+
+    function getBetResult() public view returns (BetResult) {
+         return betResult;
+    }
 }
